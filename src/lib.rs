@@ -48,5 +48,7 @@ impl fmt::Display for WebhookRequest {
 #[post("/sms")]
 async fn index(form: web::Form<WebhookRequest>) -> impl Responder {
   println!("{}", form.clone());
-  HttpResponse::Ok().body(generic_response(form.body.clone()))
+  HttpResponse::Ok()
+    .content_type("application/xml")
+    .body(generic_response(form.body.clone()))
 }
