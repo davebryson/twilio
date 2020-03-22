@@ -1,0 +1,4 @@
+/target
+Cargo.lock
+testit.sh
+ex_test.txt
