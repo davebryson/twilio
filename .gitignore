@@ -1,6 +1,5 @@
 /target
 Cargo.lock
-testit.sh
-sail.sh
-ex_test.txt
+*.sh
+*.txt
 

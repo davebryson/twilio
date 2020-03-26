@@ -17,7 +17,7 @@ fn generic_response(resp: String) -> String {
   )
 }
 
-// TODO only parse fields needed - remove the rest
+// TODO only parse fields needed - remove the rest - keep simple
 #[derive(Debug, Clone, Deserialize)]
 pub struct WebhookRequest {
   #[serde(rename(deserialize = "MessageSid"))]
@@ -48,7 +48,11 @@ impl fmt::Display for WebhookRequest {
 #[post("/sms")]
 async fn index(form: web::Form<WebhookRequest>) -> impl Responder {
   println!("{}", form.clone());
+  // get the sender
+  // get the body
+  // act on the body
+  //HttpResponse::Ok()
+  //  .content_type("application/xml")
+  // .body(generic_response(form.body.clone()))
   HttpResponse::Ok()
-    .content_type("application/xml")
-    .body(generic_response(form.body.clone()))
 }
